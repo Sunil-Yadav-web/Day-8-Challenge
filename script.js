@@ -249,8 +249,8 @@ countWordInput.addEventListener('input', (e) => {
 
 function subStringOfString(input) {
   let allSubStr = ''
-  for (let i = 0; i < input.length; i++) {
-    for (let j = i; j < input.length; j++) {
+  for (let i = 0; i < input.trim().length; i++) {
+    for (let j = i; j < input.trim().length; j++) {
       let subStr = ''
       for (let k = i; k <= j; k++) {
         subStr += `${input[k]}`
@@ -268,7 +268,7 @@ subStringOfStringInput.addEventListener('input', (e) => {
 function compressString(input) {
   let frequency = ''
   let stringObj = {}
-  for (let letter of input) {
+  for (let letter of input.trim()) {
     stringObj[letter] = (stringObj[letter] || 0) + 1
   }
   for (let [key, value] of Object.entries(stringObj)) {
